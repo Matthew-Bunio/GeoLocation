@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Accept coordinates as input to a geocoder</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+
+<div id="wrapper">
+	<header>
+	  <div class="navbar">
+		<a href="#" class="right">Github</a>
+		<a href="#" class="right">Images</a>
+		<a href="#" class="right">Instagram</a>
+		<a href="#">Matthew Bunio</a>
+	   
+	  </div>
+		
+	</header>
+</div>
+<body>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+ 
+<div id="map"></div>
+ 
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYnVueWF1Y2giLCJhIjoiY2wxd2c2NnZzMGRuZjNqbXRwc3Z0bmRzNCJ9.fy--DxMH6e9kvWy4BO746w';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-97.192982, 49.815182],
+zoom: 8
+});
+ 
+
+const coordinatesGeocoder = function (query) {
+
+
+ 
+function coordinateFeature(lng, lat) {
+return {
+center: [lng, lat],
+geometry: {
+type: 'Point',
+coordinates: [lng, lat]
+},
+place_name: 'Lat: ' + lat + ' Lng: ' + lng,
+place_type: ['coordinate'],
+properties: {},
+type: 'Feature'
+};
+}
+
+};
+ 
+
+
+
+</script>
+ 
+</body>
+</html>
